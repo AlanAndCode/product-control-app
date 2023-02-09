@@ -30,10 +30,8 @@ public class MainActivity extends AppCompatActivity implements AdapterProduto.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle("Controle de Estoque");
-        toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
+
+
 
         RecyclerProdutos = findViewById(R.id.RecyclerProdutos);
         carregaLista();
@@ -106,24 +104,7 @@ adapterProduto.notifyItemRemoved(position);
         Toast.makeText(this, produto.getNome(), Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-       MenuInflater inflater = getMenuInflater();
-       inflater.inflate(R.menu.menu_toolbar, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int idMenu = item.getGroupId();
-        if(idMenu == R.id.menu_add){
-            Toast.makeText(this, "add a new product", Toast.LENGTH_SHORT).show();
-        }else if(idMenu == R.id.menu_add){
-            Toast.makeText(this, "information about  this", Toast.LENGTH_SHORT).show();
-        }
-
-        return true;
-    }
 
 
 }
