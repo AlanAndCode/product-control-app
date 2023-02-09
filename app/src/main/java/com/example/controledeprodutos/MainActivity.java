@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ImageButton;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
@@ -25,17 +27,42 @@ public class MainActivity extends AppCompatActivity implements AdapterProduto.On
     private SwipeableRecyclerView RecyclerProdutos;
     private AdapterProduto adapterProduto;
 
+    private ImageButton image_add;
+    private ImageButton image_info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+    image_add = findViewById(R.id.image_add);
+        image_info= findViewById(R.id.image_info);
 
 
         RecyclerProdutos = findViewById(R.id.RecyclerProdutos);
         carregaLista();
         configRecyclerView();
+
+        ouvinteCliques();
+    }
+
+    private void ouvinteCliques(){
+        image_add.setOnClickListener(view -> {
+            Toast.makeText(this, "add a new product", Toast.LENGTH_SHORT).show();
+        });
+
+        image_info.setOnClickListener(view -> {
+            PopupMenu popupMenu = new PopupMenu(this, image_info);
+            popupMenu.getMenuInflater().inflate(R.menu.menu_toolbar, popupMenu.getMenu());
+
+            popupMenu.setOnMenuItemClickListener(menuItem -> {
+            if (menuItem.getItemId() == R.id.menu_sobre ){
+                Toast.makeText(this, "Sobre", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+            });
+popupMenu.show();
+        });
     }
 
     private void configRecyclerView(){
