@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "801577091606",
+    "project_id": "control-product--stock",
+    "storage_bucket": "control-product--stock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801577091606:android:15172eaeb9e6a668092b37",
+        "android_client_info": {
+          "package_name": "com.example.controledeprodutos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801577091606-t1rngfsc5vhec8krl1r6a4c05gnt919e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.controledeprodutos",
+            "certificate_hash": "7e30e412685ccc3a82f0ee8d15e20324289e705c"
+          }
+        },
+        {
+          "client_id": "801577091606-ub29favrkm31b7itqsnujo859ukf92aq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjHY6QmhXkigc0HjM19OnjgyesB7vLRVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801577091606-ub29favrkm31b7itqsnujo859ukf92aq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
