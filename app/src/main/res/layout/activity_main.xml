@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F76A65"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <include
         android:id="@+id/include"
@@ -13,6 +13,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nenhum Produto"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/RecyclerProdutos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <com.tsuryo.swipeablerv.SwipeableRecyclerView
         android:id="@+id/RecyclerProdutos"

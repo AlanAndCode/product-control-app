@@ -6,13 +6,32 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ControleDeProdutos"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.SplashActivity"
+            android:theme="@style/SplashBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.FormProdutoActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Auth.CriarContaActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Auth.ActivityLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

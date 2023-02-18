@@ -7,15 +7,25 @@
     android:background="#F76A65"
     tools:context=".Auth.ActivityLogin">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="16dp"
-        app:layout_constraintVertical_bias="0.32"
-        tools:layout_editor_absoluteX="71dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:layout_width="match_parent"
@@ -30,9 +40,9 @@
             android:layout_margin="8dp"
             android:background="@drawable/bg_edit"
             android:hint="Email"
+            android:padding="16dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:padding="16dp" />
+            android:textColorHint="@color/black" />
 
         <TextView
             android:layout_width="match_parent"
@@ -48,9 +58,19 @@
             android:background="@drawable/bg_edit"
             android:hint="Password"
             android:inputType="numberPassword"
+            android:padding="16dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:padding="16dp" />
+            android:textColorHint="@color/black" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:background="@drawable/bg_btn"
+            android:onClick="logar"
+            android:text="logar"
+            android:textAllCaps="false" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,8 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:text="Criar conta"
-                 />
+                android:text="Criar conta" />
 
             <TextView
                 android:id="@+id/text_CP"
@@ -77,6 +96,16 @@
 
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:indeterminateTint="@color/white" />
+
     </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
