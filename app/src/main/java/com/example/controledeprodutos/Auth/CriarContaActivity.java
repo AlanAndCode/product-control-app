@@ -2,14 +2,16 @@ package com.example.controledeprodutos.Auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.controledeprodutos.R;
+import com.example.controledeprodutos.activity.MainActivity;
+import com.example.controledeprodutos.helper.FirebaseHelper;
+import com.example.controledeprodutos.model.Usuario;
 
 public class CriarContaActivity extends AppCompatActivity {
     private EditText edit_nome;
@@ -34,7 +36,16 @@ public class CriarContaActivity extends AppCompatActivity {
         if(!nome.isEmpty()) {
             if (!email.isEmpty()) {
                 if (!senha.isEmpty()) {
-                    Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+
+                    progressBar.setVisibility(View.VISIBLE);
+
+Usuario usuario = new Usuario();
+usuario.setNome(nome);
+usuario.setEmail(email);
+usuario.setSenha(senha);
+
+SalvarCadastro(usuario);
+
                 } else {
                     edit_senha.requestFocus();
                     edit_senha.setError("Write your password");
@@ -55,14 +66,27 @@ public class CriarContaActivity extends AppCompatActivity {
         findViewById(R.id.ic_back).setOnClickListener(view -> finish());
             }
 
+            private void SalvarCadastro(Usuario usuario){
+                FirebaseHelper.getAuth().createUserWithEmailAndPassword(
+                        usuario.getEmail(), usuario.getSenha() ).addOnCompleteListener(task -> {
+    if(task.isSuccessful()){
+        String id = task.getResult().getUser().getUid();
+        usuario.setId(id);
+
+        finish();
+        startActivity(new Intent(this, MainActivity.class));
+
+    }
+                        });
+            }
+
     private void iniciaComponentes(){
         edit_nome = findViewById(R.id.edit_nome);
         edit_email = findViewById(R.id.edit_email);
         edit_senha = findViewById(R.id.edit_senha);
         progressBar = findViewById(R.id.ProgessBar);
 
-        TextView text_titulo = findViewById(R.id.text_titulo);
-        text_titulo.setText("Criar conta");
+
     }
 
 }
