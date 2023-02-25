@@ -3,21 +3,48 @@ package com.example.controledeprodutos.model;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.example.controledeprodutos.helper.FirebaseHelper;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.Serializable;
 
 public class Produto implements Serializable {
-private int id;
+private String id;
 
 
     private String nome;
     private int estoque;
     private double valor;
 
-    public int getId() {
+
+    public Produto() {
+DatabaseReference reference = FirebaseHelper.getDatabaseReference();
+this.setId(reference.push().getKey());
+    }
+
+    public void SaveProduct(){
+        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
+                .child("produtos")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.id);
+        reference.setValue(this);
+    }
+
+    public void deleteProduct(){
+        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
+                .child("produtos")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.id);
+        reference.removeValue();
+    }
+
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getNome() {
