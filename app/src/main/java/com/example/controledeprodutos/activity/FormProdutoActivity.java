@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.controledeprodutos.ProductDAO;
 import com.example.controledeprodutos.R;
 import com.example.controledeprodutos.model.Produto;
 
@@ -15,7 +14,7 @@ private EditText edit_stock;
     private EditText edit_prod;
 
 
-    private ProductDAO productDAO;
+
 
     private Produto produto;
 
@@ -24,7 +23,6 @@ private EditText edit_stock;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_produto);
 
-        productDAO = new ProductDAO(this);
 
         edit_stock = findViewById(R.id.edit_stock);
         edit_prod = findViewById(R.id.edit_prod);
@@ -38,13 +36,9 @@ if(bundle != null){
 
 
 
-editProduto();
+
     }
-private void editProduto(){
-        edit_prod.setText(produto.getNome());
-        edit_stock.setText(String.valueOf(produto.getEstoque()));
-        edit_value.setText(String.valueOf(produto.getValor()));
-}
+
     public void salvarProduto(View view) {
 
         String nome = edit_prod.getText().toString();
@@ -66,11 +60,7 @@ private void editProduto(){
                             produto.setEstoque(qtd);
                             produto.setValor(valorProduct);
 
-                            if(produto.getId() != 0){
-                                productDAO.atualizarProduto(produto);
-                            }else{
-                                productDAO.saveProduct(produto);
-                            }
+                            produto.SaveProduct();
 
                             finish();
 
