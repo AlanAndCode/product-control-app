@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Esqueceu a senha?"
+                android:text="Recuperar Conta"
                 android:textAlignment="textEnd"
                 android:textColor="@android:color/white" />
 
