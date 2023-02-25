@@ -12,9 +12,12 @@
         android:theme="@style/Theme.ControleDeProdutos"
         tools:targetApi="31">
         <activity
+            android:name=".RecuperarContaActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.SplashActivity"
-            android:theme="@style/SplashBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,13 +26,13 @@
         </activity>
         <activity
             android:name=".activity.FormProdutoActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Auth.CriarContaActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Auth.ActivityLogin"
             android:exported="true">
