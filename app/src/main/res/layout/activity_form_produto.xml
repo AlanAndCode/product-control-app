@@ -14,82 +14,109 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
-  
-  <LinearLayout
+
+  <ScrollView
       android:layout_width="match_parent"
       android:layout_height="0dp"
-    android:orientation="vertical"
+      android:fillViewport="true"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/include2" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-      android:text="Produto"
-      android:textColor="@android:color/white"/>
-
-    <EditText
-        android:id="@+id/edit_prod"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/include2">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/bg_edit"
-        android:hint="Name of product"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:inputType="text"
-        android:padding="16dp" />
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="32dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="stock"
-        android:textColor="@android:color/white"/>
 
-    <EditText
-        android:id="@+id/edit_stock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:background="@drawable/bg_edit"
-        android:hint="Number in stock"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:inputType="number"
-        android:padding="16dp" />
+      <androidx.cardview.widget.CardView
+          android:layout_width="120dp"
+          android:layout_height="120dp"
+          android:layout_gravity="center_horizontal"
+          app:cardCornerRadius="5dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Value"
-        android:textColor="@android:color/white"/>
+        <ImageView
+            android:id="@+id/image_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="verifYPermissionGallery"
+            android:src="@drawable/ic_logo" />
 
-    <EditText
-        android:id="@+id/edit_value"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:background="@drawable/bg_edit"
-        android:hint="Product Value"
-        android:inputType="number"
-        android:padding="16dp" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/bg_btn"
-        android:backgroundTint="@android:color/white"
-        android:onClick="salvarProduto"
-        android:padding="16dp"
-        android:text="Salvar"
-        android:textAllCaps="false"
-        android:textColor="#F76A65" />
+      </androidx.cardview.widget.CardView>
 
-  </LinearLayout>
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:text="Produto"
+          android:textColor="@android:color/white" />
+
+      <EditText
+          android:id="@+id/edit_prod"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="4dp"
+          android:background="@drawable/bg_edit"
+          android:hint="Name of product"
+          android:inputType="text"
+          android:padding="16dp"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="stock"
+          android:textColor="@android:color/white" />
+
+      <EditText
+          android:id="@+id/edit_stock"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="4dp"
+          android:background="@drawable/bg_edit"
+          android:hint="Number in stock"
+          android:inputType="number"
+          android:padding="16dp"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Value"
+          android:textColor="@android:color/white" />
+
+      <EditText
+          android:id="@+id/edit_value"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="4dp"
+          android:background="@drawable/bg_edit"
+          android:hint="Product Value"
+          android:inputType="number"
+          android:padding="16dp"
+          android:textColor="@color/black"
+          android:textColorHint="@color/black" />
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="16dp"
+          android:background="@drawable/bg_btn"
+          android:backgroundTint="@android:color/white"
+          android:onClick="salvarProduto"
+          android:padding="16dp"
+          android:text="Salvar"
+          android:textAllCaps="false"
+          android:textColor="#F76A65" />
+
+    </LinearLayout>
+
+  </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
