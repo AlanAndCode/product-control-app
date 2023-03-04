@@ -21,5 +21,5 @@ Picasso
 
 A powerful image downloading and caching library for Android
 
-![Screenshot](https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg)  <img width="175" alt="SwipeableRecyclerView" src="https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg"> 
+ <img width="175" alt="SwipeableRecyclerView" src="https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg"> 
 
