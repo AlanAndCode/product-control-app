@@ -6,6 +6,7 @@ import android.view.View;
 import com.example.controledeprodutos.helper.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.Serializable;
 
@@ -16,6 +17,7 @@ private String id;
     private String nome;
     private int estoque;
     private double valor;
+    private String urlImage;
 
 
     public Produto() {
@@ -37,6 +39,13 @@ this.setId(reference.push().getKey());
                 .child(FirebaseHelper.getIdFirebase())
                 .child(this.id);
         reference.removeValue();
+
+        StorageReference storageReference = FirebaseHelper.getStorageReference()
+                .child("imagens")
+                .child("produtos")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.id + ".jpeg");
+        storageReference.delete();
     }
 
 
@@ -70,5 +79,13 @@ this.setId(reference.push().getKey());
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 }
