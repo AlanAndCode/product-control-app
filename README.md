@@ -21,4 +21,4 @@ Picasso
 
 A powerful image downloading and caching library for Android
 
-![](website/static/sample.png)
+![][(https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg)
