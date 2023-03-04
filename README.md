@@ -19,7 +19,7 @@ Android library provides a simple to use Swipeable RecyclerView.
 Picasso
 =======
 
-Example of using picasso in app
+Example of using picasso in FormProduto
 
  <img width="300" alt="SwipeableRecyclerView" src="https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg"> 
 
