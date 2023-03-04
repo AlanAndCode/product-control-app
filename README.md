@@ -19,7 +19,7 @@ Android library provides a simple to use Swipeable RecyclerView.
 Picasso
 =======
 
-A powerful image downloading and caching library for Android
+Example of using picasso in app
 
- <img width="175" alt="SwipeableRecyclerView" src="https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg"> 
+ <img width="300" alt="SwipeableRecyclerView" src="https://github.com/AlanAndCode/product-control-app/blob/master/app/src/main/res/drawable/expicasso.jpg"> 
 
