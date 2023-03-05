@@ -1,6 +1,6 @@
 # product-control-app
 
-application that simulates a register of product inventory, where you can perform CRUD functions. in addition to using other libraries like TedPermission, Picasso for images that can be used in the registration and Swipeable - Recycler View for an interactive screen.
+Application that simulates a register of product inventory, where you can perform CRUD functions. in addition to using other libraries like TedPermission, Picasso for images that can be used in the registration and Swipeable - Recycler View for an interactive screen.
 
 # Swipeable-RecyclerView
 Android library provides a simple to use Swipeable RecyclerView.
